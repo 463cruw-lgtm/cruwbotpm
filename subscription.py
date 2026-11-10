@@ -6,11 +6,12 @@ from aiogram.types import (
 )
 
 # =========================
-# MAJBURIY OBUNA
+# MAJBURIY OBUNA KANALLARI
 # =========================
 
 SUBSCRIPTION_CHATS = [
-    "@CRUW_OTZIF"
+    "@CRUW_OTZIF",
+    "@ppsavdochatp"
 ]
 
 
@@ -48,8 +49,14 @@ subscription_keyboard = InlineKeyboardMarkup(
     inline_keyboard=[
         [
             InlineKeyboardButton(
-                text="📢 CRUW OTZIF KANALIGA KIRISH",
+                text="📢 CRUW OTZIF",
                 url="https://t.me/CRUW_OTZIF"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="💬 PP SAVDO CHAT",
+                url="https://t.me/ppsavdochatp"
             )
         ],
         [
@@ -63,7 +70,7 @@ subscription_keyboard = InlineKeyboardMarkup(
 
 
 # =========================
-# OBUNA TEKSHIRISH
+# OBUNA TEKSHIRISH FUNKSIYASI
 # =========================
 
 async def subscription_check_message(
@@ -79,11 +86,13 @@ async def subscription_check_message(
 
     await message.answer(
         """
-🔒 <b>BOTDAN FOYDALANISH UCHUN KANALGA A'ZO BO'LING!</b>
+🔒 <b>BOTDAN FOYDALANISH UCHUN KANALLARGA A'ZO BO'LING!</b>
 
-📢 Kanal: @CRUW_OTZIF
+📢 Kanallar:
+• @CRUW_OTZIF
+• @ppsavdochatp
 
-Keyin <b>✅ OBUNANI TEKSHIRISH</b> tugmasini bosing.
+A'zo bo'lgach, <b>✅ OBUNANI TEKSHIRISH</b> tugmasini bosing.
 """,
         parse_mode="HTML",
         reply_markup=subscription_keyboard
